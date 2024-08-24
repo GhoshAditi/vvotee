@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter Registration Form</title>
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+    <div class="header">
+        <div class="right-align">
+          <div class="logo">
+            <h1 class="colr">VVotee</h1>
+          </div>
+        </div>
+      </div>
+      <div class="hamburger-menu">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <nav class="menu">
+          <label for="menu-toggle" class="close-icon">&times;</label> 
+          <ul>
+            <li><a href="../html/index.html">Home</a></li>
+            <li><a href="../html/login.html">Login/Sign In</a></li>
+            <li><a href="../html/admin-new.html">Candidates</a></li>
+            <li><a href="../html/form.html">Vote Now</a></li>
+            <li><a href="#footer">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+        <h1>Voter Registration Form</h1>
+        <!--since we are appealing to the masses, how about we have a Hindi version of our texts to better suit them?-->
+        <form id="voter-form">
+            <label  for="voter-name">Voter's Name: ("अपना नाम दर्ज करें")</label>
+            <input style="width: 650px;" class="voter-name" type="text" id="voter-name" name="voter-name" placeholder="Name" required>
+
+            <label for="voter-number">Voter ID Number:</label>
+            <input style="width: 650px;" type="text" id="voter-number" name="voter-number" placeholder="+91 XXXXX-XXXXX" required>
+
+            <label for="aadhar-number">Aadhar Number:</label>
+            <input style="width: 650px;" type="text" id="aadhar-number" name="aadhar-number" placeholder="XXXX-XXXX-XXXX" required>
+
+            <label for="dob">Date Of Birth:</label>
+            <input style="width: 650px;" type="date" id="dob" name="dob" placeholder="DD-MM-YYYY" required>
+
+            <label for="father-name">Child Of:</label>
+            <input style="width: 650px;" type="text" name="dob" id="dob" placeholder="Father's Name" required>
+            <input style="width: 650px;" type="text" name="dob" id="dob" placeholder="Mother's Name" required>
+
+            <label for="voter-state">Voter's State:</label>
+            <select style="width: 670px;" id="voter-state" name="voter-state" required>
+                <option value="">Select State</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>
+            </select>
+
+            <label for="voter-city">Corresponding Legislative Constituent Assembly:</label>
+            <select style="width: 670px;" id="voter-city" name="voter-city" required>
+                <option value="">Select City</option>
+            </select>
+
+            <button type="submit" id="submit-button" disabled>Submit</button>
+        </form>
+        <div id="error-message" class="error-message" style="display: none;">
+            Not logged in. <a href="login.html">Click here to login</a>
+        </div>
+    </div>
+    <script src="../js/form.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+/* Apply a background gradient to the text */
+.gradient-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #4A90E2, #50E3C2, #9013FE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body {
+    background-color: #000; /* Black background for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}

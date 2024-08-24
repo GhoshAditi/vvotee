@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login Page</title>
+  <link rel="Icon" type="image/x-icon" href="../assets/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../css/login.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="right-align">
+      <div class="logo">
+        <h1 class="colr">VVotee</h1>
+      </div>
+    </div>
+  </div>
+  <div class="hamburger-menu">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <nav class="menu">
+      <label for="menu-toggle" class="close-icon">&times;</label> 
+      <ul>
+        <li><a href="../html/index.html">Home</a></li>
+        <li><a href="../html/login.html">Login/Sign In</a></li>
+        <li><a href="../html/candidate-new.html">Vote Now</a></li>
+        <li><a href="../html/index.html#footer">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+  <section class="container">
+    <div class="login-container">
+      <div class="circle circle-one"></div>
+      <div class="form-container">
+        <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
+        <h1 class="opacity">LOGIN</h1>
+        <!-- Updated form to match IDs and structure -->
+        <form id="loginForm">
+          <div class="form-group">
+            <input type="text" class="form-control" id="voter-id" name="voter-id" placeholder="Voter id" />
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+          </div>
+          <button type="submit" class="btn btn-primary opacity">SUBMIT</button>
+        </form>
+        <div class="register-forget opacity">
+          <p>Don't have an Account? <a href="register.html" class="login-link">Register</a></p>
+        </div>
+      </div>
+      <div class="circle circle-two"></div>
+    </div>
+    <div class="theme-btn-container"></div>
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="../js/login.js" type="module"></script>
+  <script src="../js/hpage.js"></script>
+</body>
+
+</html>

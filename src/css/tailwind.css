@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[hidden] {
+    display: none;
+    }
+
+[type="text"],
+input:where(:not([type])),
+[type="email"],
+[type="url"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="number"],
+[type="date"],
+[type="datetime-local"],
+[type="time"],
+[type="week"],
+[type="month"],
+[multiple],
+textarea,
+select {
+    appearance: none;
+    background-color: transparent;
+    border-color: unset;
+    border-width: 0;
+    border-radius: unset;
+    padding: unset;
+    font-size: unset;
+    line-height: unset;
+}
+
+[type="text"]:focus,
+[type="email"]:focus,
+[type="url"]:focus,
+[type="password"]:focus,
+[type="number"]:focus,
+[type="date"]:focus,
+[type="search"]:focus,
+textarea:focus,
+select:focus {
+    --tw-ring-colour: transparent;
+    border-colour:transparent;
+}
+
+[type="radio"]:focus,
+[type="checkbox"]:focus {
+    --tw-ring-colour: transparent;
+}
+
+@layer components {
+    .ui.textarea.round {
+        @apply rounded-lg;
+    }
+    
+    .ui.textarea.size-xs {
+        @apply h-[162px] p-3;
+    }
+
+    .ui.textarea.tarfillwithea700.white_a700 {
+        @apply bg-white-a700;
+    }
+
+    .ui.input.size-xs {
+        @apply h-[88px] px-3;
+    }
+
+    .ui.input.fill.white_a700 {
+        @apply bg-white-a700;
+    }
+
+    .ui.input {
+        @apply flex items-center justify-center cursor-text bg-white-a700 rounded-lg;
+    }
+
+    /*button css*/
+    .ui.button.round {
+        @apply rounded-[104px];
+    }
+
+    .ui.button.size-xs {
+        @apply h-[40px] px-[26px] text-[15px];
+    }
+
+    .ui.button.fill.teal_a700 {
+        @apply bg-teal-a700 text-white-a700;
+    }
+
+    .ui.button.bordered.black_900_black_900 {
+        @apply border-black-900 border-[5px] border-solid bg-gradient1 backdrop-opacity-[0.5] blue-[25.00px] text-white-a700;
+    }
+
+    .ui.button {
+        @apply flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap text-white-a700;
+    }
+
+    /*text css*/
+    .ui.text.size-texts {
+        @apply text-[16px] font-normal not-italic lg:text-[13px];
+    }
+
+    .ui.text.size-textxl {
+        @apply text-[25px] font-normal not-italic lg:text-[21px] md:text-[23px] sm:text-[21px];
+    }
+
+    .ui.text.size-text2xl {
+        @apply text-[30px] font-normal not-italic lg:text-[25px] md:text-[28px] sm:text-[26px];
+    }
+
+    .ui.text.size-text3xl {
+        @apply text-[33px] font-normal not-italic lg:text-[37px] md:text-[40px] sm:text-[34px];
+    }
+
+    .ui.text.size-text4xl {
+        @apply text-[44px] font-normal not-italic lg:text-[37px] md:text-[40px] sm:text-[34px];
+    }
+
+    .ui.text.size-text5xl {
+        @apply text-[53px] font-normal not-italic lg:text-[45px] md:text-[45px] sm:text-[39px];
+    }
+
+    .ui.text.size-text6xl {
+        @apply text-[64px] font-normal not-italic lg:text-[64px] md:text-[48px];
+    }
+
+    .ui.text {
+        @apply text-[12px] font-medium;
+    }
+    /*heading css*/
+
+    .ui.heading.size-textxs {
+        @apply text-[12px] font-medium;
+    }
+
+    .ui.heading.size-textmd {
+        @apply text-[21px] font-medium lg:text-[17px];
+    }
+
+    .ui.heading.size-headings {
+        @apply text-[23px] font-extrabold lg:text-[19px] md:text-[21px];
+    }
+
+    .ui.heading.size-headingmd {
+        @apply text-[24px] font-semibold lg:text-[20px] md:text-[22px];
+    }
+
+    .ui.heading.size-headinglg {
+        @apply text-[25px] font-blavk lg:text-[21px] md:text-[23px] sm:text-[21px];
+    }
+
+    .ui.heading.size-headingxl {
+        @apply text-[28px] font-extrabold lg:text-[23px] md:text-[26px] sm:text-[24px];
+    }
+
+    .ui.heading.size-heading2xl {
+        @apply text-[38px] font-black lg:text-[32px] md:text-[26px] sm:text-[34px];
+    }
+
+    .ui.heading.size-heading3xl {
+        @apply text-[48px] font-black lg:text-[40px] md:text-[44px] sm:text-[38px];
+    }
+
+    .ui.heading.size-heading4xl {
+        @apply text-[60px] font-semibold lg:text-[51px] md:text-[52px] sm:text-[46px];
+    }
+
+    .ui.heading.size-heading5xl {
+        @apply text-[62px] font-extrabold lg:text-[62px] md:text-[48px];
+    }
+
+    .ui.heading.size-heading6xl {
+        @apply text-[66px] font-semibold lg:text-[66px] md:text-[48px];
+    }
+
+    .ui.heading.size-heading7xl {
+        @apply text-[80px] font-bold lg:text-[80px] md:text-[48px];
+    }
+
+    .ui.heading {
+        @apply text-white-a70 font-roboto;
+    }
+
+    /*container css*/
+    .container-xs {
+        @apply w-full mx-auto max-w-[1230px];
+    }
+}

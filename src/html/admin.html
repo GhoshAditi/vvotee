@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin portal</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
+    
+  </head>
+  <body>
+    <div class="head">
+    <div class="header">
+      <div class="right-align">
+        <div class="logo">
+           <h1 class="colr">VVotee</h1>
+        </div>
+      </div>
+    </div>
+    <div class="hamburger-menu">
+      <div class="container">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <nav class="menu">
+          <label for="menu-toggle" class="close-icon">&times;</label> 
+          <ul>
+            <li><a href="../html/index.html">Home</a></li>
+            <li><a href="../html/login.html">Login/Sign In</a></li>
+            <li><a href="../html/candidate-new.html">Vote Now</a></li>
+            <li><a href="../html/index.html#footer">Contact Us</a></li>
+          </ul>
+      </div>
+        <script>
+          document.getElementById('menu-icon').addEventListener('click', function() {
+          const navMenu = document.getElementById('nav-menu');
+          if (navMenu.style.left === '0px') {
+              navMenu.style.left = '-250px';
+          } else {
+              navMenu.style.left = '0px';
+          }
+      });</script>
+      </nav>
+    </div>
+  </div>
+    <div id="head" class="text-center">
+      <h1 align="center" style="color: azure;">Decentralized Voting Using Ethereum Blockchain</h1>
+      <br/> 
+    </div>
+
+    <div class="container">
+     <legend>Add Candidate</legend>  
+     <table style="margin-left: 70px;" class="table text-center"> 
+              <tr>
+                <th>Name </th><td>  <input  id="name" type="text" name="name" placeholder ="Candidates name" autocomplete="off"></td>  
+                <th>Party</th><td><input  id="party" type="text" name="party" placeholder ="Candidates party"></td> 
+              </tr>
+      </table> 
+      <input style="margin-right: 20px;" id="addCandidate" type="submit" name="submit" value="Add Candidate">
+      <p id="Aday"></p>
+    </div>
+
+    <div class="container">
+     <legend>Define Voting Dates</legend>  
+     <table style="margin-left: 70px;" class="table text-center"> 
+              <tr>              
+                <th>Start date</th><td><input  id="startDate" type="date" name=""></td>
+                <th>End date</th><td>  <input  id="endDate" type="date" name="" ></td>
+              </tr>
+      </table> 
+      <input style="margin-right: 20px;" id="addDate" type="submit" name="submit" value="Define Dates">
+      <p id="Aday"></p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="../dist/app.bundle.js" type="module"></script>
+  </body>
+</html>

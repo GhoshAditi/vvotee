@@ -35,22 +35,19 @@
                 <tr>
                     <th>Candidate Name</th>
                     <th>Party</th>
-                    <th>Vote</th>
                 </tr>
             </thead>
             <tbody id="boxCandidate">
-                <!-- Candidates will be dynamically populated here -->
+                <!-- Candidates will be dynamically populated here by app.js -->
             </tbody>
         </table>
     </div>
 
     <div id="vote">
         <p>Please select one of the candidates and click the vote button.</p>
-        <button id="voteButton" class="btn btn-primary" onclick="App.vote()" disabled>Vote</button>
+        <button id="voteButton" class="btn btn-primary" onclick="hellovote()">Vote</button>
         <div id="msg"></div>
-  
         <div id="vote-box"></div>
-      </div>
     </div>
 
     <!-- Account Information -->
@@ -61,6 +58,52 @@
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="./../js/vote.js"></script>
+    <script src="./../js/app.js"></script>
     <script src="../dist/app.bundle.js" type="module"></script>
+
+    <!-- Embedded Script for Dynamic Table Interaction -->
+    <script>
+        // Add radio buttons to dynamically populated candidates
+        function addSelectors() {
+            const tableBody = document.getElementById('boxCandidate');
+            const rows = tableBody.getElementsByTagName('tr');
+            
+            for (let row of rows) {
+                // Create a new cell for the radio button
+                const selectCell = document.createElement('td');
+                const radioInput = document.createElement('input');
+                radioInput.type = 'radio';
+                radioInput.name = 'candidate';
+                radioInput.value = row.cells[0].innerText; // Assuming first cell is the candidate name
+                selectCell.appendChild(radioInput);
+                row.appendChild(selectCell);
+            }
+        }
+
+        // Vote Functionality
+        function hellovote() {
+            const selectedCandidateInput = document.querySelector('input[name="candidate"]:checked');
+
+            if (!selectedCandidateInput) {
+                document.getElementById('msg').innerHTML = "<p>Please select a candidate to vote for.</p>";
+                return;
+            }
+
+            // Get selected candidate details from the row
+            const selectedCandidateName = selectedCandidateInput.value;
+            const selectedRow = selectedCandidateInput.parentElement.parentElement;
+            const partyName = selectedRow.cells[1].innerText; // Assuming second cell is the party name
+
+            // Display message about the vote
+            console.log(`Voted for: ${selectedCandidateName} from ${partyName}`);
+            document.getElementById('msg').innerHTML = `<p>Vote recorded for ${selectedCandidateName} from ${partyName}!</p>`;
+        }
+
+        // Initialize on Page Load
+        window.onload = function() {
+            addSelectors(); // Add radio buttons once the candidates are populated
+        };
+    </script>
 </body>
 </html>

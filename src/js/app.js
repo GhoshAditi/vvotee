@@ -33,7 +33,6 @@ window.App = {
         // Load initial data
         this.loadCandidates();
         this.loadDates();
-        this.checkVote();
 
         // Bind events
         this.bindEvents();
@@ -48,7 +47,7 @@ window.App = {
   bindEvents: function() {
     $(document).on('click', '#addCandidate', this.addCandidate.bind(this));
     $(document).on('click', '#addDate', this.setVotingDates.bind(this));
-    // No need to bind vote button click here, as it's handled directly via HTML
+    $(document).on('click', '#voteButton', this.vote.bind(this));
   },
 
   loadCandidates: async function() {
@@ -74,7 +73,7 @@ window.App = {
               ${name}
             </td>
             <td>${party}</td>
-            <td id="vote_count_${id}">${voteCount}</td>
+            
           </tr>`;
           
         $("#boxCandidate").append(viewCandidates);
@@ -98,19 +97,6 @@ window.App = {
       $("#dates").text(`${displayStartDate.toDateString()} - ${displayEndDate.toDateString()}`);
     } catch (error) {
       console.error("Error loading dates: " + error.message);
-    }
-  },
-
-  checkVote: async function() {
-    try {
-      const voted = await this.contractInstance.checkVote({ from: this.account });
-      if (!voted) {
-        $("#voteButton").attr("disabled", false);
-      } else {
-        $("#voteButton").attr("disabled", true);
-      }
-    } catch (error) {
-      console.error("Error checking vote status: " + error.message);
     }
   },
 
@@ -153,25 +139,18 @@ window.App = {
     }
 
     try {
-      const alreadyVoted = localStorage.getItem(`voted_for_${this.account}_${candidateID}`);
+      // Proceed with voting on the blockchain
+      await this.contractInstance.vote(parseInt(candidateID), { from: this.account });
 
-      if (!alreadyVoted) {
-        // Proceed with voting on the blockchain
-        await this.contractInstance.vote(parseInt(candidateID), { from: this.account });
+      // Increment the local counter for the voted candidate
+      const currentLocalVotes = parseInt(localStorage.getItem(`candidate_${candidateID}_votes`), 10) || 0;
+      localStorage.setItem(`candidate_${candidateID}_votes`, currentLocalVotes + 1);
 
-        // Increment the local counter for the voted candidate if the user hasn't voted yet
-        const currentLocalVotes = parseInt(localStorage.getItem(`candidate_${candidateID}_votes`), 10) || 0;
-        localStorage.setItem(`candidate_${candidateID}_votes`, currentLocalVotes + 1);
-        localStorage.setItem(`voted_for_${this.account}_${candidateID}`, 'true'); // Mark this candidate as voted by this account
+      // Update the displayed vote count
+      $(`#vote_count_${candidateID}`).text(currentLocalVotes + 1);
 
-        // Update the displayed vote count
-        $(`#vote_count_${candidateID}`).text(currentLocalVotes + 1);
-
-        $("#voteButton").attr("disabled", true);
-        $("#msg").html("<p>Voted</p>");
-      } else {
-        $("#msg").html("<p>You have already voted for this candidate.</p>");
-      }
+      $("#voteButton").attr("disabled", true);
+      $("#msg").html("<p>Voted</p>");
 
       window.location.reload();
     } catch (error) {

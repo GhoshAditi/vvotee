@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body {
   background-image: url('../assets/alt-bg2.jpg');
   background-size: cover;
@@ -9,7 +11,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
   backdrop-filter: blur(50px);
 }
 
@@ -27,7 +29,20 @@ body {
 h1 {
   color: #fff;
   margin-bottom: 20px;
+  font: Arial, sans-serif;
 }
+
+h2 {
+  position: absolute;
+  top: 0px;
+  left: 300px;
+  margin-top: 250px;
+  font-size: 70px;
+  font-weight: 50px;
+  font-family: Roboto;
+
+}
+
 
 table {
   width: 100%;
@@ -38,6 +53,9 @@ th, td {
   padding: 10px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: #fff;
+  font: Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 28px;
 }
 
 img {
@@ -57,10 +75,12 @@ th {
 button {
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #4CAF50;
   color: white;
+  font-size: 30px;
   cursor: pointer;
+  width: 95px;
 }
 
 button:hover {

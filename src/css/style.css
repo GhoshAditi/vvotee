@@ -10,20 +10,24 @@ body {
 }
 .chatbot-toggler {
   position: fixed;
-  bottom: 30px;
-  right: 35px;
-  outline: none;
-  border: none;
-  height: 50px;
-  width: 50px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   display: flex;
-  cursor: pointer;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  background: #724ae8;
-  transition: all 0.2s ease;
+  cursor: pointer;
 }
+
+.chatbot-toggler span {
+  font-size: 30px;
+}
+
 body.show-chatbot .chatbot-toggler {
   transform: rotate(90deg);
 }

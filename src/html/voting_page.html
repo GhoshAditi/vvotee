@@ -21,19 +21,43 @@
 <body>
 
     <!-- Header Section -->
-    <div id="head" class="text-center">
-        <h1 class="colr">VVotee</h1>
-        <h2>Welcome for Voting</h2>
-        <h3><p>Voting Dates: <span id="dates"></span></p></h3>
+    <div></div>
+
+    <div class="header">
+        <div class="right-align">
+          <div class="logo">
+             <h1 class="colr">VVotee</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="hamburger-menu">
+        <div class="container">
+          <input type="checkbox" id="menu-toggle">
+          <label for="menu-toggle" class="menu-icon">&#9776;</label>
+          <nav class="menu">
+            <label for="menu-toggle" class="close-icon">&times;</label> 
+            <ul>
+              <li><a href="../html/index.html">Home</a></li>
+              <li><a href="../html/login.html">Login/Sign In</a></li>
+              <li><a href="../html/voting_page.html">Vote Now</a></li>
+              <li><a href="../html/index.html#footer">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+    
+      </div>
+
+        <h2 style="color: white;">Welcome for Voting!</h2>
+        <!-- <h3><p style="color: white;">Voting Dates: <span id="dates"></span></p></h3> -->
     </div>
 
     <!-- Candidate List Section -->
-    <div id="candidate" class="container">
-        <legend>Candidates</legend>
+    <div id="candidate" class="container position-relative">
         <table class="table text-center">
             <thead>
                 <tr>
-                    <th>Candidate Name</th>
+                    <th style=>Candidate Name</th>
                     <th>Party</th>
                 </tr>
             </thead>
@@ -44,7 +68,7 @@
     </div>
 
     <div id="vote">
-        <p>Please select one of the candidates and click the vote button.</p>
+        <p style="color:white;margin-left: 20px;font-size: 30px;">Please select one of the candidates and click the vote button.</p>
         <button id="voteButton" class="btn btn-primary" onclick="hellovote()">Vote</button>
         <div id="msg"></div>
         <div id="vote-box"></div>

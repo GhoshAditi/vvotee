@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 :root {
   --d: 700ms;
@@ -24,7 +25,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 90vh;
-    background: url('../assets/blockchain.png') no-repeat center center fixed;
+    background: url('../assets/alt-bg2.png') no-repeat center center fixed;
     background-size: cover;
 }
 

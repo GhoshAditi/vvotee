@@ -9,13 +9,11 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  background-image: url('../assets/alt.jpg');
+  /*change background properties here:*/
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  backdrop-filter: blur(50px);
-  
-  
+  backdrop-filter: blur(30px);
 }
 
 /* Hero Section Styles */

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -7,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 70vh;
-    background: url('../assets/alt-bg2.jpg') no-repeat center;
+    background: url('../assets/racism2.jpg') no-repeat center;
     backdrop-filter: blur(50px);
     background-size: cover;
   }

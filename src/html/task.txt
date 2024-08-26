@@ -1,4 +1,0 @@
-admin.html and voting_page.html
-
-login is changed already (check once)
-index is changed already (check once)

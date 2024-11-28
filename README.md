@@ -17,8 +17,6 @@
 ---
 
 <p align="center"> This project is a decentralized voting platform built on the Ethereum blockchain, designed to ensure transparency, security, and immutability in the voting process.
-
-    <br> 
 </p>
 
 ## 📝 Table of Contents
@@ -72,13 +70,6 @@ This project proposes a decentralized voting platform leveraging blockchain tech
 These instructions will get you a copy of the project up and running on your local machine for development
 and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
-### Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
 
 ## Installation
 
